@@ -1,14 +1,17 @@
 .ct_wrapper{
 	max-width: 900px;
+	padding: 1vw;
 }
 .chatbox_wrapper{
 	z-index: 11;
 	/*border: 1px solid #3d3d3d;*/
 	border-radius: 20px;
+	box-shadow: 5px 5px 5px #ccc;
 }
 .chatbox_wrapper #chat_header{
 	background: #f2f2f2;
 	color: #7f7f7f;
+	padding: 20px calc( var(--base_number) * 2);
 }
 .chatbox_wrapper #chat_header a{
 
@@ -24,7 +27,7 @@
   height: 100%;
 	top: 0;
 	right: 0;
-	padding: 2vw;
+	padding: calc( var(--base_number) * 2);
 	overflow: auto;
 }
 #chat_history_container p.visitor {
@@ -63,7 +66,7 @@
 .chatbox_wrapper #chat_mesg_wrapper {
 	background: #f2f2f2;
 	color: #7f7f7f;
-	padding: calc( var(--base_number) * 1);
+	padding: calc( var(--base_number) * 2);
 }
 .chatbox_wrapper #chat_mesg_wrapper > input{
 	flex: 1 0 80%;
@@ -76,10 +79,11 @@
 
 
 @media only screen and (max-width: 550px) {
+		body{ overflow: hidden; }
     :root {
-        --base_font_size: 3.7vw !important;
-        --base_lineheight: 4.5vw !important;
-        --base_number: 3.7vw !important;
+      --base_font_size: 3.7vw !important;
+      --base_lineheight: 4.5vw !important;
+      --base_number: 3.7vw !important;
     }
 
     .ct_wrapper > .fl {
@@ -87,16 +91,21 @@
     }
     
     .ct_wrapper > .fr {
-    	width: 90%;
-    	height: 95%;
+    	width: 100%;
+    	position: fixed;
+	    height: 100%;
+	    top: 0;
+	    left: 0;
+	    border-radius: 0;
     }
 }
 
 @media only screen and (min-width: 551px) and (max-width: 1024px) {
+		body{ overflow: hidden; }
     :root {
-        --base_font_size: 2vw !important;
-        --base_lineheight: 2.8vw !important;
-        --base_number: 2vw !important;
+      --base_font_size: 2vw !important;
+      --base_lineheight: 2.8vw !important;
+      --base_number: 2vw !important;
     }
 
     .ct_wrapper > .fl {
