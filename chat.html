@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>JS Chat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="css/chat.css">
+	<link rel="stylesheet" type="text/css" href="css/helper.css">
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+	<div class="grain"></div>
+	<div class="ct_wrapper widthvw100 heightvh100 ofh df aic jcc mx-auto">
+		<div class="widthb50 df aic tal fl heightb100">
+			<h1 class="fs7 lh7s"> JS Chat </h1>
+		</div>
+		<div class="chatbox_wrapper widthb50 fr heightvh80 relative ofh">
+			<div class="df fdc heightb100">
+				<div id="chat_header" class="px2 py1 dif jcsb aic">
+					<h2 class="fs1-5 lh2 bold">JS Chat</h2>
+				</div>
+
+				<div id="chat_history_container" class="px2 pt2 ofa ofwa relative">
+					<div class="chat_history clearfix">
+					</div>
+					<i class="typing">typing...</i>
+				</div>
+				
+				<div class="df aic" id="chat_mesg_wrapper">
+					<input id="chatInput" class="fs1 lh1" placeholder='Type your question here...'>
+					<a href="javascript: void(0)" id="chatSubmit" class="tar fs1-5 lh2 bold">
+						<i class="las la-paper-plane"></i>
+					</input>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+	<script src="js/chat.js"></script>
+	<script src="js/index.js"></script>
+	
+</body>
+</html>
