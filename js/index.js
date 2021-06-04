@@ -4,8 +4,9 @@
 
   // get chat history and render in history box
   chat.getChatHistory((chats)=>{
+  	// console.log(chats);
   	chats.map((v,i)=>{
-	  	generateChatRow('p', v.message, v.from, '.chat_history');
+	  	generateChatRow('p', v.message, v.from, v.date, '.chat_history');
   	})
 
   	let objDiv = document.querySelector('.chat_history');
@@ -14,8 +15,8 @@
 
   // attach custom event
 	document.querySelector('#chatSubmit').addEventListener('chatreceived', function (e) {
-		// console.log(e.detail)
-		generateChatRow('p', e.detail.message, e.detail.from, '.chat_history');
+		console.log(e.detail)
+		generateChatRow('p', e.detail.message, e.detail.from, e.datetime, '.chat_history');
 	}, false);
 
 	document.querySelector('#chatSubmit').addEventListener('click', function (e) {
@@ -28,11 +29,16 @@
 	});
 
 	// generate single chat row
-	function generateChatRow(tag, message, from, appendTo){
+	function generateChatRow(tag, message, from, date, appendTo){
+		let dateNode = document.createElement('em');
+  	let dateTextnode = document.createTextNode(moment(date).format('MMMM Do YYYY, h:mm:ss a'));
+  	dateNode.appendChild(dateTextnode);
+
   	let node = document.createElement(tag);
   	node.classList.add(from.toLowerCase());
   	let textnode = document.createTextNode(message);
   	node.appendChild(textnode);
+  	node.appendChild(dateNode);
 		document.querySelector(appendTo).appendChild(node);
 		gsap.fromTo(node, .3, {opacity: 0, y: 20}, {opacity: 1, y: 0});
 	}

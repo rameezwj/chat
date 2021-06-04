@@ -55,6 +55,13 @@
 #chat_history_container p{
 	margin-bottom: 1.5vw;
 }
+#chat_history_container p > em{
+	width: 100%;
+	display: block;
+	font-style: italic;
+	margin-top: calc( var(--base_number) * .3);
+  font-size: calc( var(--base_number) * .8);
+}
 .typing{
 	position: absolute;
 	bottom: 2vw;
